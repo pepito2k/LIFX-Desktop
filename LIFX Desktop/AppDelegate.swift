@@ -12,10 +12,14 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
-
+    
+    let statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(-1)
+    let token = "c7811e9db7b9145f333970ede14481b3d3ec9b070e73f6b555c02d2832f2388d"
+    let listLightsURL = NSURL(string: "https://api.lifx.com/v1/lights/all")
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        // Insert code here to initialize your application
+        let icon = NSImage(named: "StatusIcon")
+        statusItem.image = icon
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
